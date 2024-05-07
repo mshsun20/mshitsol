@@ -1,0 +1,318 @@
+
+.contacts {
+    /* background-color: blueviolet; */
+    width: 100%;
+    min-height: 20rem;
+    padding: 10rem;
+    font-size: 1rem;
+}
+.hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.gmap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+.gmap .gmp {
+    width: 100%;
+    height: 20rem;
+}
+.cnt {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+.gloc {
+    width: 30%;
+    padding: 1rem;
+}
+.locdta {
+    background-color: aqua;
+    width: 100%;
+    height: 10rem;
+}
+.cntsec {
+    width: 65%;
+    padding: 2rem;
+}
+
+
+
+/* form style */
+
+#contact {
+    background-color: #dfcef3;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem 0;
+    font: 300 1.5rem 'Oswald', sans-serif;
+    color: var(--theme-dark);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+  }
+  
+  .contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  /* Left contact page */
+  .form-horizontal {
+    /*float: left;*/
+    width: 100%;
+    max-width: 20rem;
+    font-family: 'Lato';
+    font-weight: 400;
+    padding: 1rem;
+  }
+  
+  .formControl, 
+  textarea {
+    width: 100%;
+    padding: 0.3rem;
+    background-color: #dfcef3;
+    color: #61118f;
+    letter-spacing: 1px;
+    margin: 0.3rem 0;
+    border: 0.1rem solid #61118f;
+    outline: none;
+    border-radius: 0.2rem;
+  }
+  .formControl:focus, 
+  textarea:focus {
+    background-color: #cfc4db;
+    color: #654b81;
+  }
+  
+  .send-button {
+    background-color: #61118f;
+    color: #cfc4db;
+    margin-top: 1rem;
+    height: 2.5rem;
+    width: 100%;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+  }
+  .send-button:hover {
+    background-color: #61118f;
+  }
+  
+  .alt-send-button {
+    background-color: #61118f;
+    width: 100%;
+    height: 2.5rem;
+    color: #cfc4db;
+    transition: all .2s ease-in-out;
+  }
+  
+  .send-text {
+    display: block;
+    background-color: #61118f;
+    margin-top: 1rem;
+    font: 700 0.4erm 'Lato', sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  .alt-send-button:hover {
+    transform: translate3d(0, -2.5rem, 0);
+  }
+  
+  /* Begin Right Contact Page */
+  .direct-contact-container {
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.5rem;
+  }
+  
+  /* Location, Phone, Email Section */
+  .contact-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    list-style-type: none;
+    /* padding: 0.2rem; */
+    /* margin-left: -30px;
+    padding-right: 2rem; */
+  }
+  
+  .list-item {
+    line-height: 4;
+    color: #61118f;
+  }
+  
+  .contact-text {
+    font: 300 1rem 'Lato', sans-serif;
+    letter-spacing: 0.1rem;
+    color: #a0812b;
+  }
+  .place, .phone, .gmail {
+    margin-left: 2rem;
+  }
+  
+  .contact-text a {
+    color: #a0812b;
+    text-decoration: none;
+    transition-duration: 0.2s;
+  }
+  
+  .contact-text a:hover {
+    color: #0d7243;
+    text-decoration: none;
+  }
+  
+  
+  /* Social Media Icons */
+  .social-media-list {
+    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.2rem;
+  }
+  
+  .social-media-list li a {
+    color: var(--theme-dark);
+  }
+  
+  .social-media-list li {
+    position: relative; 
+    display: inline-block;
+    height: 3.75rem;
+    width: 3.75rem;
+    margin: 0.8rem 0.2rem;
+    line-height: 60px;
+    border-radius: 50%;
+    color: var(--theme-dark);
+    background-color: #8b6a97;
+    cursor: pointer; 
+    transition: all .2s ease-in-out;
+  }
+  
+  .social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px var(--theme-dark);
+    transition: all .2s ease-in-out;
+  }
+  
+  .social-media-list li:hover {
+    background-color: var(--theme-dark); 
+  }
+  
+  .social-media-list li:hover:after {
+    opacity: 1;  
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+  }
+  
+  .social-media-list li:hover a {
+    color: var(--theme-light);
+  }
+  
+  .copyright {
+    font: 200 14px 'Oswald', sans-serif;
+    color: #555555;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  
+  hr {
+    border-color: rgba(40, 14, 48, 0.6);
+  }
+  
+  /* Begin Media Queries*/
+  @media screen and (max-width: 850px) {
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .direct-contact-container, .form-horizontal {
+      margin: 0 auto;
+    }  
+    
+    .direct-contact-container {
+      margin-top: 60px;
+      max-width: 300px;
+    }    
+    .social-media-list li {
+      height: 60px;
+      width: 60px;
+      line-height: 60px;
+    }
+    .social-media-list li:after {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+    }
+  }
+  
+  @media screen and (max-width: 569px) {
+  
+    .direct-contact-container, .form-wrapper {
+      float: none;
+      margin: 0 auto;
+    }  
+    .formControl, textarea {
+      margin: 0 auto;
+    }
+   
+    
+    .name, .email, textarea {
+      width: 280px;
+    } 
+    
+    .direct-contact-container {
+      margin-top: 60px;
+      max-width: 280px;
+    }  
+    .social-media-list {
+      left: 0;
+    }
+    .social-media-list li {
+      height: 55px;
+      width: 55px;
+      line-height: 55px;
+      font-size: 2rem;
+    }
+    .social-media-list li:after {
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 410px) {
+    .send-button {
+      width: 100%;
+    }
+  }

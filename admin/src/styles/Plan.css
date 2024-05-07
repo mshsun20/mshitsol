@@ -1,0 +1,178 @@
+
+#plnsec {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    min-height: 40rem;
+    padding: 2rem;
+
+    .hdr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        font-size: 2rem;
+        font-weight: 200;
+        letter-spacing: 0.5rem;
+    }
+    
+    .optgrp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        padding: 2rem;
+    
+        .actgrp {
+            position: relative;
+            background-color: blue;
+            padding: 0.5rem;
+            border-radius: 0.2rem;
+            z-index: 3;
+    
+            span {
+                white-space: nowrap;
+            }
+            &:hover > .opt {
+                width: 8rem;
+    
+                .lnk a {
+                    display: inline-flex;
+                }
+            }
+            .opt {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #1b3541;
+                width: 0;
+                transition: width 0.1s linear;
+                z-index: 3;
+        
+                .lnk {
+                    display: flex;
+                    width: 100%;
+                    padding: 0.5rem;
+        
+                    &:hover {
+                        background-color: #3e8100;
+                    }
+                    a {
+                        display: none;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+
+    .dtatbl {
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+        width: 100%;
+        height: 30rem;
+        padding: 0 2rem;
+        overflow: auto;
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0.1rem;
+    
+            tr {
+                th {
+                    background-color: #5e4979;
+                    padding: 1rem;
+                    color: #8daad6;
+                    text-align: center;
+                    transition: all 0.2s linear;
+                    border-radius: 0.5rem;
+    
+                    &:hover {
+                        background-color: #705b8b;
+                        color: #190838;
+                    }
+                }
+            }
+            td {
+                background-color: #413255;
+                padding: 0.5rem;
+            }
+            .edthd {
+                background-color: #486330;
+                width: 7.5rem;
+                color: #112003;
+                &:hover {
+                    background-color: #29470d;
+                    color: #adff98;
+                }
+            }
+            .rmvhd {
+                background-color: #773341;
+                width: 7.5rem;
+                color: #240209;
+                &:hover {
+                    background-color: #4e0312;
+                    color: #ffa1b4;
+                }
+            }
+            .edtbtn {
+                position: relative;
+                
+                .btn {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-image: radial-gradient(#3e8100 2%, #213f04 100%);
+                    width: 2rem;
+                    height: 2rem;
+                    padding: 1rem;
+                    color:#deffbf;
+                    font-weight: bold;
+                    border: none;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+    
+                    &:hover {
+                        background-image: radial-gradient(#008165 2%, #043f32 100%);
+                    }
+                }
+            }
+            .rmvbtn {
+                position: relative;
+                
+                .btn {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-image: radial-gradient(#dc143c 10%, #520111 100%);
+                    width: 2rem;
+                    height: 2rem;
+                    padding: 1rem;
+                    color: #ffc0cd;
+                    font-weight: bold;
+                    border: none;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+    
+                    &:hover {
+                        background-image: radial-gradient(#dc5314 10%, #521b01 100%);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+
+.lgform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.lgform .formsec {
+    width: 50%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.lgform .midlsec {
+    width: 10%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.lgform .btnsec {
+    width: 30%;
+}
+
+
+@media (max-width: 1023px) {
+    .lgform {
+        flex-direction: row;
+    }
+    .lgform .formsec {
+        width: 100%;
+    }
+    .lgform .midlsec {
+        width: 100%;
+    }
+    .lgform .btnsec {
+        width: 100%;
+    }
+}

@@ -1,0 +1,90 @@
+
+:root {
+  --theme: #7c41be;
+  --theme-light: #cca7f7;
+  --theme-dark: #432566;
+  --dl-color-white:#e0e0e0;
+  --dl-color-gray-white:#c9c9c9;
+  --dl-color-gray-900: #303030;
+  --dl-color-gray-black: #1f1f1f;
+  --dl-space-space-halfunit: 0.5rem;
+  --dl-space-space-unit: 1rem;
+  --dl-space-space-oneandhalfunits: 1.5rem;
+  --dl-space-space-twounits: 2rem;
+  --dl-space-space-twoandhalfunits: 2.5rem;
+  --dl-space-space-threeunits: 3rem;
+  --dl-space-space-fourunits: 4rem;
+  --dl-size-size-xxtiny: 0.8rem;
+  --dl-size-size-xtiny: 1rem;
+  --dl-size-size-xxsmall: 1.2rem;
+  --dl-size-size-xsmall: 1.5rem;
+  --dl-size-size-xxmedium: 1.8rem;
+  --dl-size-size-xmedium: 2rem;
+  --dl-size-size-xxlarge: 2.5rem;
+  --dl-size-size-xlarge: 3rem;
+  --dl-size-size-maxwidth: 60rem;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html {
+  font-family: Inter;
+  line-height: 1.15;
+}
+body {
+  background-color: var(--dl-color-gray-white);
+  color: var(--dl-color-gray-black);
+  font-size: 62.5%;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.15;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
+
+/* scrollbar custom design */
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #cdd6df;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #525a68;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2f4c6d;
+}
