@@ -75,6 +75,12 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/auth", authRoutes); // becomes /api/auth on production
 app.use("/", routes);         // becomes /api/... auto prefixed by vercel
 
+// test routes
+app.get("/", (req, res) => {
+  res.json({ status: "API is running on Vercel serverless 🎉" });
+});
+
+
 
 // --------- EXPORT SERVERLESS HANDLER ----------
 export const handler = serverless(app);
