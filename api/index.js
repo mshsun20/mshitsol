@@ -11,17 +11,16 @@ import mongoConn from "./db/dbcon.js";
 import authRoutes from "./routes/authRoute.js";
 import routes from "./routes/route.js";
 
-// Load environment variables
-dotenv.config({ quiet: true });
+dotenv.config();
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
 // -------- ENV SETTINGS ----------
-const apienv = process.env.NODE_ENV || "dev";        // dev/live
-const appenv = process.env.APP_ENV || "quality";     // quality/production
+const apienv = process.env.NODE_ENV || "dev";
+const appenv = process.env.APP_ENV || "quality";
+
 const allowedOrigins = {
   dev: {
     quality: [process.env.APP_URL_DEVQ],
@@ -32,27 +31,28 @@ const allowedOrigins = {
     production: [process.env.APP_URL_LIVP],
   },
 };
-const origins = allowedOrigins?.[apienv]?.[appenv] || [
-  "http://localhost:3502",
-];
 
-// --------- DB CONNECTION (Serverless Safe) ----------
+const origins =
+  allowedOrigins?.[apienv]?.[appenv] || ["http://localhost:3502"];
+
+// --------- DB CONNECTION ----------
 let isDbConnected = false;
+
 async function initDB() {
   if (!isDbConnected) {
     await mongoConn();
     isDbConnected = true;
-    console.log("✅ MongoDB connected (serverless)");
+    console.log("MongoDB connected (serverless)");
   }
 }
-// Ensure DB connects for every cold start
+
+// Vercel cold start
 await initDB();
 
-
-// --------- EXPRESS MIDDLEWARES ----------
-app.set("trust proxy", true);
+// --------- EXPRESS ----------
 app.use(express.json());
 app.use(cookieParser());
+app.set("trust proxy", true);
 app.use(
   cors({
     origin: origins,
@@ -67,21 +67,19 @@ app.use(
     optionsSuccessStatus: 200,
   })
 );
-app.use(bodyParser.json({ limit: "10000mb" }));
-app.use(bodyParser.urlencoded({ limit: "10000mb", extended: true }));
-// Static uploads folder (still works on Vercel)
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-// ---------- API ROUTES ----------
-app.use("/auth", authRoutes); // becomes /api/auth on production
-app.use("/", routes);         // becomes /api/... auto prefixed by vercel
 
-// test routes
+// --------- ROUTES ----------
+app.use("/auth", authRoutes);
+app.use("/", routes);
+
+// Health test
 app.get("/", (req, res) => {
-  res.json({ status: "API is running on Vercel serverless 🎉" });
+  res.json({ status: "API OK on Vercel" });
 });
 
-
-
-// --------- EXPORT SERVERLESS HANDLER ----------
+// --------- EXPORT ----------
 export const handler = serverless(app);
 export default handler;
