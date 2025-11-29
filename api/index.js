@@ -56,11 +56,6 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/auth", authRoutes);
 app.use("/", routes);
 
-// Health test
-app.get("/", (req, res) => {
-  res.json({ status: "API OK on Vercel" });
-});
-
 // --------- SERVERLESS HANDLER ----------
 const handler = serverless(async (req, res) => {
   // ensure DB is connected on cold start
