@@ -20,24 +20,24 @@ const app = express();
 
 // ------------------ MONGODB CONNECTION ------------------
 // global cache to avoid reconnecting on warm invocations
-let cached = global.mongo;
-if (!cached) cached = global.mongo = { conn: null, promise: null };
+// let cached = global.mongo;
+// if (!cached) cached = global.mongo = { conn: null, promise: null };
 
-async function connectToDatabase() {
-  if (cached.conn) return cached.conn;
+// async function connectToDatabase() {
+//   if (cached.conn) return cached.conn;
 
-  if (!cached.promise) {
-    const opts = { bufferCommands: false };
-    cached.promise = mongoose.connect(process.env.ONLN_DBURL, opts).then((mongoose) => {
-      return mongoose;
-    });
-  }
-  cached.conn = await cached.promise;
-  return cached.conn;
-}
+//   if (!cached.promise) {
+//     const opts = { bufferCommands: false };
+//     cached.promise = mongoose.connect(process.env.ONLN_DBURL, opts).then((mongoose) => {
+//       return mongoose;
+//     });
+//   }
+//   cached.conn = await cached.promise;
+//   return cached.conn;
+// }
 
 // Call DB connection before handling requests
-await connectToDatabase();
+// await connectToDatabase();
 console.log("✅ MongoDB connected (serverless)");
 
 // ------------------ MIDDLEWARES ------------------
