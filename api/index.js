@@ -18,23 +18,17 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// --------- ENV SETTINGS ----------
-const apienv = process.env.NODE_ENV || "dev";
-const appenv = process.env.APP_ENV || "quality";
+// --------- DB connection middleware ----------
+let isDbConnected = false;
 
-const allowedOrigins = {
-  dev: {
-    quality: [process.env.APP_URL_DEVQ],
-    production: [process.env.APP_URL_DEVP],
-  },
-  live: {
-    quality: [process.env.APP_URL_LIVQ],
-    production: [process.env.APP_URL_LIVP],
-  },
-};
-
-const origins =
-  allowedOrigins?.[apienv]?.[appenv] || ["http://localhost:3502"];
+app.use(async (req, res, next) => {
+  if (!isDbConnected) {
+    await mongoConn();
+    isDbConnected = true;
+    console.log("MongoDB connected (serverless)");
+  }
+  next();
+});
 
 // --------- EXPRESS MIDDLEWARES ----------
 app.use(express.json());
@@ -43,7 +37,12 @@ app.set("trust proxy", true);
 
 app.use(
   cors({
-    origin: origins,
+    origin: [
+      process.env.APP_URL_DEVQ,
+      process.env.APP_URL_DEVP,
+      process.env.APP_URL_LIVQ,
+      process.env.APP_URL_LIVP,
+    ].filter(Boolean),
     credentials: true,
   })
 );
@@ -56,15 +55,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/auth", authRoutes);
 app.use("/", routes);
 
-// --------- SERVERLESS HANDLER ----------
-const handler = serverless(async (req, res) => {
-  // ensure DB is connected on cold start
-  if (!global.__mongoConnected) {
-    await mongoConn();
-    global.__mongoConnected = true;
-    console.log("MongoDB connected (serverless)");
-  }
-  return app(req, res);
+app.get("/", (req, res) => {
+  res.json({ status: "API OK on Vercel" });
 });
 
-export default handler;
+// --------- SERVERLESS EXPORT ----------
+export default serverless(app);
