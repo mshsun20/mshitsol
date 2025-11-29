@@ -1,4 +1,3 @@
-// /api/index.js
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -7,8 +6,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import serverless from "serverless-http";
+import mongoose from "mongoose";
 
-import mongoConn from "./db/dbcon.js";
 import authRoutes from "./routes/authRoute.js";
 import routes from "./routes/route.js";
 
@@ -19,24 +18,29 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// ------------------ DB CONNECTION MIDDLEWARE ------------------
-let isDbConnected = false;
+// ------------------ MONGODB CONNECTION ------------------
+// global cache to avoid reconnecting on warm invocations
+let cached = global.mongo;
+if (!cached) cached = global.mongo = { conn: null, promise: null };
 
-app.use(async (req, res, next) => {
-  if (!isDbConnected) {
-    try {
-      await mongoConn();
-      isDbConnected = true;
-      console.log("✅ MongoDB connected (serverless)");
-    } catch (err) {
-      console.error("❌ MongoDB connection failed:", err);
-      return res.status(500).json({ error: "Database connection failed" });
-    }
+async function connectToDatabase() {
+  if (cached.conn) return cached.conn;
+
+  if (!cached.promise) {
+    const opts = { bufferCommands: false };
+    cached.promise = mongoose.connect(process.env.ONLN_DBURL, opts).then((mongoose) => {
+      return mongoose;
+    });
   }
-  next();
-});
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
 
-// ------------------ EXPRESS MIDDLEWARES ------------------
+// Call DB connection before handling requests
+await connectToDatabase();
+console.log("✅ MongoDB connected (serverless)");
+
+// ------------------ MIDDLEWARES ------------------
 app.use(express.json());
 app.use(cookieParser());
 app.set("trust proxy", true);
@@ -58,17 +62,14 @@ app.use(
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static uploads folder
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ------------------ ROUTES ------------------
 app.use("/auth", authRoutes);
 app.use("/", routes);
 
-// Health check route
-app.get("/", (req, res) => {
-  res.json({ status: "API OK on Vercel" });
-});
+// Health check
+app.get("/", (req, res) => res.json({ status: "API OK on Vercel" }));
 
-// ------------------ SERVERLESS EXPORT ------------------
+// ------------------ EXPORT ------------------
 export default serverless(app);
