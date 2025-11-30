@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
+import AboutPage from "@/components/About/AboutPage";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>MSH IT Sol - Home | Full Stack Developer Portfolio, MERN, Next.js & DevOps Expert</title>
 
@@ -65,11 +66,10 @@ export default function Home() {
         />
       </Head>
 
-      <div className="main-body">
-        <main>
-          <div>Home</div>
-        </main>
-      </div>
-    </div>
+      <main className="main-body">
+        <div>Home Page</div>
+        <AboutPage />
+      </main>
+    </>
   );
 }
