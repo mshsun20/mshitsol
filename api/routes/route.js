@@ -26,7 +26,7 @@ const createRoute = (method, path, ...handlers) => {
 };
 
 // PING
-// createRoute('get', '/', (_, res) => res.status(200).json({ message: 'Server is Live...' }));
+createRoute('get', '/', (_, res) => res.status(200).json({ message: 'Server is Live...' }));
 createRoute('get', '/chckstat', (_, res) => res.status(200).json({ message: 'Server is Online Now...' }));
 
 // POST
