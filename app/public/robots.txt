@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://mshitsol-app.vercel.app/sitemap.xml
+Host: mshitsol-app.vercel.app
