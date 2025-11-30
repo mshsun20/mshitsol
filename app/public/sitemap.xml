@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://mshitsol-app.vercel.app/"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<!-- MAIN PAGES -->
+<url>
+  <loc>https://mshitsol-app.vercel.app/</loc>
+  <priority>1.00</priority>
+  <changefreq>daily</changefreq>
+</url>
+
+<url>
+  <loc>https://mshitsol-app.vercel.app/about</loc>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://mshitsol-app.vercel.app/projects</loc>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://mshitsol-app.vercel.app/contact-us</loc>
+  <priority>0.70</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://mshitsol-app.vercel.app/faq</loc>
+  <priority>0.70</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- LEGAL PAGES -->
+<url>
+  <loc>https://mshitsol-app.vercel.app/privacy-policy</loc>
+  <priority>0.40</priority>
+  <changefreq>yearly</changefreq>
+</url>
+
+<url>
+  <loc>https://mshitsol-app.vercel.app/disclaimer</loc>
+  <priority>0.40</priority>
+  <changefreq>yearly</changefreq>
+</url>
+
+<!-- Quality CTO PDFs -->
+<url><loc>https://mshitsol-app.vercel.app/wp-content/themes/ShyamMetallic/pdfs/Quality-CTO_1.pdf</loc><priority>0.30</priority></url>
+
+</urlset>
