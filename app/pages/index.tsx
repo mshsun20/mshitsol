@@ -16,7 +16,13 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>MSH IT Solutions</title>
+        <title>MSHITSol - Home</title>
+        <meta name="description" content="This is MSH Portfolio web application of a Full Stack Software Developer." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://mshitsol-app.vercel.app/" />
+        <meta property="og:title" content="Full Stack Software Developer Profile | MSH IT Sol" ></meta>
+        <meta property="og:description" content="Check all the Portfolio details as well as CV for your reference." ></meta>
+        <meta property="og:url" content="https://mshitsol-app.vercel.app/" ></meta>
       </Head>
       <div className="main-body">
         <main>
