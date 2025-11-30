@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --card-bg: #f9f9f9;
+  --text-color: #171717;
+  --b-shadow: 0.2rem 0.2rem 3.5rem #000000cc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark Theme */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --card-bg: #1a1a1a;
+  --text-color: #ededed;
+  --b-shadow: 0.2rem 0.2rem 3.5rem #ffffffcc;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  /* min-height: 100vh; */
+}
+
+
+
+
+/* =========================================================================================================================================================================================================================================================== */
+/* All Custom Styles */
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Style your toggle button */
+.theme-toggle-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.8rem;
+  background: var(--card-bg);
+  /* font-size: 0.5rem; */
+  color: var(--text-color);
+  border: 0rem solid var(--text-color);
+  border-radius: 50%;
+  box-shadow: var(--b-shadow);
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.header {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 0.1rem solid var(--text-color);
+}
+.footer {
+  font-size: 1.4rem;
+  padding: 2rem;
+  text-align: center;
+  border-top: 0.1rem solid var(--text-color);
+}
+
+.main-body {
+  min-height: 100vh;
+  font-size: 1.6rem;
 }

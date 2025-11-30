@@ -27,7 +27,7 @@ const axiosInstance = axios.create({
 
 let interceptorsApplied = false;
 
-interface Store {
+export interface Store {
   getState(): { auth: { accessToken?: string } };
   dispatch(action: { type: string; payload?: unknown }): void;
 }
@@ -36,7 +36,7 @@ const setupInterceptors = (store: Store) => {
   if (interceptorsApplied) return;
   interceptorsApplied = true;
 
-  console.log("🔥 Axios Interceptors Initialized");
+  // console.log("🔥 Axios Interceptors Initialized");
 
   axiosInstance.interceptors.request.use(
     (config) => {
