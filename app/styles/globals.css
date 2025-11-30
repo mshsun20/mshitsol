@@ -48,7 +48,6 @@ body {
   right: 2rem;
   padding: 0.8rem;
   background: var(--card-bg);
-  /* font-size: 0.5rem; */
   color: var(--text-color);
   border: 0rem solid var(--text-color);
   border-radius: 50%;
@@ -58,17 +57,58 @@ body {
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
   font-size: 1.6rem;
   font-weight: bold;
   padding: 2rem;
   text-align: center;
   border-bottom: 0.1rem solid var(--text-color);
+
+  .navsec {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70%;
+
+    .navlink {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--foreground);
+      }
+    }
+  }
 }
 .footer {
   font-size: 1.4rem;
   padding: 2rem;
   text-align: center;
   border-top: 0.1rem solid var(--text-color);
+}
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 4rem;
+  }
+  p {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
 }
 
 .main-body {
