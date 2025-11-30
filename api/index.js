@@ -18,27 +18,6 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// ------------------ MONGODB CONNECTION ------------------
-// global cache to avoid reconnecting on warm invocations
-let cached = global.mongo;
-if (!cached) cached = global.mongo = { conn: null, promise: null };
-
-async function connectToDatabase() {
-  if (cached.conn) return cached.conn;
-
-  if (!cached.promise) {
-    const opts = { bufferCommands: false };
-    cached.promise = mongoose.connect(process.env.ONLN_DBURL, opts).then((mongoose) => {
-      return mongoose;
-    });
-  }
-  cached.conn = await cached.promise;
-  return cached.conn;
-}
-
-// Call DB connection before handling requests
-await connectToDatabase();
-console.log("✅ MongoDB connected (serverless)");
 
 // ------------------ MIDDLEWARES ------------------
 app.use(express.json());
@@ -66,7 +45,6 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ------------------ ROUTES ------------------
 app.use("/auth", authRoutes);
-// app.use("/", routes);
 
 // Health check
 app.get("/", (req, res) => res.json({ status: "API OK on Vercel" }));
