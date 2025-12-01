@@ -1,0 +1,40 @@
+/* Style your toggle button */
+.theme-toggle-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.8rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 0rem solid var(--text-color);
+  border-radius: 50%;
+  box-shadow: var(--b-shadow);
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* 404 page style */
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 4rem;
+  }
+  p {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+}
+
+/* Main Body styles */
+.main-body {
+  min-height: 100vh;
+  font-size: 1.6rem;
+}

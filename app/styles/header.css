@@ -1,0 +1,31 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 0.1rem solid var(--text-color);
+
+  .navsec {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70%;
+
+    .navlink {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--foreground);
+      }
+    }
+  }
+}
