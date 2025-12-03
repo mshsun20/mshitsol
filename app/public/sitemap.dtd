@@ -1,5 +1,0 @@
-<!ELEMENT urlset (url+)>
-<!ELEMENT url (loc,priority,changefreq?)>
-<!ELEMENT loc (#PCDATA)>
-<!ELEMENT priority (#PCDATA)>
-<!ELEMENT changefreq (#PCDATA)>
