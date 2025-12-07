@@ -2,24 +2,46 @@
 
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #808080;
+  --dark: #0a0a0a;
+  --light: #ededed;
+  --theme-color: #7700fffb;
+  --theme-light: #b39cce;
+  --theme-dark: #3a2057fb;
+  --card-light: #f9f9f9;
+  --card-dark: #1a1a1a;
+  --select-light: #cfcdcd86;
+  --select-dark: #4e4e4e86;
+  --text-color: #7543adfb;
+  --text-light: #171717;
+  --text-dark: #ededed;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --card-bg: #f9f9f9;
-  --text-color: #171717;
-  --b-shadow: 0.2rem 0.2rem 3.5rem #000000cc;
+  --shadow-color-light: #0000003a;
+  --shadow-color-dark: #ffffff3d;
 }
 
+/* Light Theme */
+[data-theme="light"] {
+  --background: radial-gradient(circle at top, var(--theme-light), var(--light));
+  --foreground: var(--text-light);
+  --hdr-bg: white;
+  --card-bg: var(--card-light);
+  --badge-bg: var(--select-light);
+  --text-color: var(--text-light);
+  --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-light);
+}
 /* Dark Theme */
 [data-theme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --card-bg: #1a1a1a;
-  --text-color: #ededed;
-  --b-shadow: 0.2rem 0.2rem 3.5rem #ffffffcc;
+  --background: radial-gradient(circle at top, var(--theme-dark), var(--dark));
+  --foreground: var(--text-dark);
+  --hdr-bg: black;
+  --card-bg: var(--card-dark);
+  --badge-bg: var(--select-dark); 
+  --text-color: var(--text-dark);
+  --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-dark);
 }
 
 html {
@@ -30,7 +52,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  /* min-height: 100vh; */
+}
+
+.icn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  /* border-radius: 50%; */
 }
 
 

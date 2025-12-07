@@ -1,5 +1,6 @@
 
 .header {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,16 +10,96 @@
   font-weight: bold;
   padding: 2rem;
   text-align: center;
-  border-bottom: 0.1rem solid var(--text-color);
+  /* border-bottom: 0.1rem solid var(--text-color); */
+
+  .logosec {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25%;
+
+    .logo {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 2.4rem;
+      font-weight: bolder;
+    }
+  }
 
   .navsec {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--hdr-bg);
+      width: auto;
+      height: auto;
+      font-size: 1.2rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 5rem;
+      box-shadow: var(--b-shadow);
+
+      .navlink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: var(--badge-bg); */
+        /* height: 100%; */
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: var(--text-color);
+        border-radius: 5rem;
+        /* transition: color 3s ease; */
+
+        &:hover {
+          background-color: var(--badge-bg);
+          color: var(--foreground);
+          transition: color 3s ease-in-out;
+        }
+      }
+
+      .navbtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: var(--badge-bg); */
+        /* height: 100%; */
+        padding: 1rem;
+        text-decoration: none;
+        color: var(--text-color);
+        border-radius: 50%;
+        transition: color 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--badge-bg);
+          color: var(--foreground);
+        }
+      }
+
+      .navsep {
+        width: 0.1rem;
+        height: 75%;
+        background-color: var(--grey);
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .sesssec {
+    display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 70%;
+    width: 15%;
 
     .navlink {
-      margin-left: 2rem;
+      padding: 1rem;
       text-decoration: none;
       color: var(--text-color);
       transition: color 0.3s ease;

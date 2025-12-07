@@ -10,7 +10,7 @@ export interface User {
   name?: string;
   email?: string;
   token?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface AuthState {
@@ -37,16 +37,16 @@ const initialState: AuthState = {
 // ─────────────────────────────────────────────
 export const login = createAsyncThunk(
   "auth/login",
-  async (credentials: any, thunkAPI) => {
+  async (credentials: unknown, thunkAPI) => {
     try {
       const data = await axiosInstance
         .post("/auth/login", credentials)
         .then((res) => res.data);
 
       return data;
-    } catch (err: any) {
+    } catch (err: unknown) {
       return thunkAPI.rejectWithValue(
-        err.response?.data?.message || "Login failed"
+        (err instanceof Error && (err as { response?: { data?: { message?: string } } }).response?.data?.message) || "Login failed"
       );
     }
   }
@@ -61,9 +61,9 @@ export const checkAuth = createAsyncThunk(
         .then((res) => res.data);
 
       return data;
-    } catch (err: any) {
+    } catch (err: unknown) {
       return thunkAPI.rejectWithValue(
-        err.response?.data?.message || "Not authenticated"
+        (err instanceof Error && (err as { response?: { data?: { message?: string } } }).response?.data?.message) || "Login failed"
       );
     }
   }

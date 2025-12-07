@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
-import AboutPage from "@/components/About/AboutPage";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -68,7 +67,6 @@ export default function Home() {
 
       <main className="main-body">
         <div>Home Page</div>
-        <AboutPage />
       </main>
     </>
   );
