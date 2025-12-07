@@ -4,14 +4,17 @@ import {
   Moon,
   House,
   CircleUserRound,
+  UserPlus,
+  UserCheck,
+  UserX
 } from 'lucide-react';
 import Link from 'next/link'
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import React from 'react'
 import { useSelector } from 'react-redux';
 
 const menuItems = [
-  { text: "Home", href: "/", icon: <House className='icn' />, iconOnly: true },
+  { text: "Home", href: "/", iconOnly: true },
   { separator: true },
   { text: "About Us", href: "/about/", icon: <CircleUserRound className='icn' /> },
   {
@@ -31,20 +34,21 @@ const menuItems = [
 ];
 
 const sessItems = [
-  { text: "Login", href: "/login/" },
-  { text: "Sign Up", href: "/signup/" },
+  { text: "Sign Up", href: "/signup/", icon: <UserPlus className='icn' /> },
+  { text: "Login", href: "/login/", icon: <UserCheck className='icn' /> },
 ];
 
 const Header = () => {
   const [theme, setTheme] = React.useState("light");
   const { isAuthenticated } = useSelector((state: { auth: AuthState }) => state.auth)
-  console.log(isAuthenticated);
-  const router = useRouter()
+  // console.log(isAuthenticated);
+  const router = useRouter(); // Pages router
+  const currentPath = router?.asPath || '/';
 
   if (isAuthenticated) {
-    sessItems.splice(0, sessItems.length, { text: "Login", href: "/login/" })
-    sessItems.splice(0, sessItems.length, { text: "Sign Up", href: "/signup/" })
-    sessItems.splice(1, sessItems.length, { text: "Logout", href: "/logout/" })
+    sessItems.splice(0, sessItems.length, { text: "Sign Up", href: "/signup/", icon: <UserPlus className='icn' /> })
+    sessItems.splice(0, sessItems.length, { text: "Login", href: "/login/", icon: <UserCheck className='icn' /> })
+    sessItems.splice(1, sessItems.length, { text: "Logout", href: "/logout/", icon: <UserX className='icn' /> })
   }
 
   React.useEffect(() => {
@@ -61,33 +65,85 @@ const Header = () => {
     localStorage.setItem("theme", updated);
   };
 
+  // Normalizes paths: strips query/hash and trailing slash (but keeps "/" as "/")
+  const normalize = (p: string) => {
+    if (!p) return '/';
+    const cleaned = p.split(/[?#]/)[0]; // remove query/hash
+    if (cleaned === '/') return '/';
+    return cleaned.endsWith('/') ? cleaned.slice(0, -1) : cleaned;
+  };
+
+  // returns true when link should be considered active
+  const isActive = (href: string) => {
+    const cur = normalize(currentPath);
+    const tgt = normalize(href);
+
+    if (tgt === '/') return cur === '/';
+    // active if exact match OR current path is inside the target path (e.g. /projects/live -> /projects)
+    return cur === tgt || cur.startsWith(tgt + '/');
+  };
+
+  // Adjust session items if authentication state changes (avoid mutating original array)
+  const sessionLinks = React.useMemo(() => {
+    if (isAuthenticated) {
+      return [{ text: "Logout", href: "/logout/", icon: <UserX className='icn' /> }];
+    }
+    return sessItems;
+  }, [isAuthenticated]);
+
   return (
     <div className='header'>
       <div className='logosec'>MSHIT-Sol</div>
       <div className="navsec">
-        <div className="navbar">
-          { menuItems?.map((elm, index) =>
-            elm?.separator
-            ? <span key={index} className='navsep'></span>
-            : (
-              elm?.href
-              ? (
-                elm?.iconOnly
-                ? <button key={elm?.text} onClick={() => router.push(elm.href)} className='navbtn'>{elm.icon}</button>
-                : <Link key={elm?.text} href={elm?.href} className='navlink'>
-                  <span style={{ padding: '0.5rem' }}>{elm.icon}</span>
-                  <span style={{ padding: '0.5rem' }}>{elm.text}</span>
-                </Link>
-              )
-              : <button key={elm?.text} className='navbtn' onClick={toggleTheme}>
-                {theme === "light" ? <Moon className='icn' /> : <Sun className='icn' />}
-              </button>
+        {menuItems.map((elm, index) =>
+          elm?.separator ? (
+            <span key={index} className='navsep'></span>
+          ) : elm?.href ? (
+            elm?.iconOnly ? (
+              <Link
+                key={elm.text}
+                href={elm.href}
+                title={elm.text}
+                className={`navbtn ${isActive(elm.href) ? 'active' : ''}`}
+              >
+                <span><House className='icn' /></span>
+              </Link>
+            ) : (
+              <Link
+                key={elm.text}
+                href={elm.href}
+                title={elm.text}
+                className={`navlink ${isActive(elm.href) ? 'active' : ''}`}
+              >
+                <span style={{ padding: '0.5rem' }}>{elm.icon}</span>
+                <span style={{ padding: '0.5rem' }}>{elm.text}</span>
+              </Link>
             )
-          ) }
-        </div>
+          ) : (
+            <button
+              key={elm.text}
+              title={elm.text}
+              className='navbtn'
+              onClick={toggleTheme}
+            >
+              {theme === "light" ? <Moon className='icn' /> : <Sun className='icn' />}
+            </button>
+          )
+        )}
       </div>
+
       <div className="sesssec">
-        { sessItems?.map(elm => <Link key={elm?.text} href={elm?.href} className='navlink'>{elm?.text}</Link>) }
+        {sessionLinks.map(elm =>
+          <Link
+            key={elm.text}
+            href={elm.href}
+            title={elm.text}
+            className={`navlink ${isActive(elm.href) ? 'active' : ''}`}
+          >
+            {elm?.icon && <span style={{ padding: '0.5rem' }}>{elm.icon}</span>}
+            <span style={{ padding: '0.5rem' }}>{elm.text}</span>
+          </Link>
+        )}
       </div>
     </div>
   )
