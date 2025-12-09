@@ -1,16 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import IntroPage from "@/components/IntroSection/IntroPage";
 
 export default function Home() {
   return (
@@ -66,7 +55,9 @@ export default function Home() {
       </Head>
 
       <main className="main-body">
-        <div>Home Page</div>
+        <div className="major-body">
+          <IntroPage />
+        </div>
       </main>
     </>
   );

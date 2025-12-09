@@ -50,6 +50,7 @@ html {
 }
 body {
   background: var(--background);
+  /* width: 100vw; */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -72,3 +73,18 @@ body {
 @import './header.css';
 @import './footer.css';
 @import './main.css';
+
+.main-body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1.6rem;
+
+  .major-body {
+    width: auto;
+    padding: 2rem;
+    font-family: "Dancing Script", cursive;
+  }
+}

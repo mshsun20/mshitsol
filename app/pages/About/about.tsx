@@ -1,4 +1,4 @@
-import AboutPage from '@/pages/About/AboutPage'
+import AboutPage from '@/components/AboutDetails/AboutPage'
 import Head from 'next/head'
 import React from 'react'
 

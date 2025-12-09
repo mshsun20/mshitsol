@@ -34,7 +34,16 @@
 }
 
 /* Main Body styles */
-.main-body {
+/* .main-body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   font-size: 1.6rem;
-}
+
+  .major-body {
+    width: auto;
+    padding: 2rem;
+  }
+} */
