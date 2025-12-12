@@ -12,6 +12,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { Dancing_Script } from 'next/font/google';
+
+const dancingScript = Dancing_Script({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dancing-script',
+});
 
 const menuItems = [
   { text: "Home", href: "/", iconOnly: true },
@@ -92,7 +100,7 @@ const Header = () => {
   }, [isAuthenticated]);
 
   return (
-    <div className='header'>
+    <div className='header dancingScript'>
       <div className='logosec'>MSHIT-Sol</div>
       <div className="navsec">
         {menuItems.map((elm, index) =>

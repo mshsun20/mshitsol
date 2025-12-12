@@ -1,5 +1,6 @@
 import Head from "next/head";
 import IntroPage from "@/components/IntroSection/IntroPage";
+import SliderPage from "@/components/SliderSection/SliderPage";
 
 export default function Home() {
   return (
@@ -57,6 +58,7 @@ export default function Home() {
       <main className="main-body">
         <div className="major-body">
           <IntroPage />
+          <SliderPage />
         </div>
       </main>
     </>

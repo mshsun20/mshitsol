@@ -11,14 +11,6 @@ import store, { persistor } from "@/redux/store";
 import { Store } from "@/config/axiosInstance";
 import { setupInterceptors } from "@/config/axiosInstance";
 import Snackbar from "@/utilities/Snackbar";
-import { Dancing_Script } from 'next/font/google';
-
-const dancingScript = Dancing_Script({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-dancing-script',
-});
 
 function App({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
