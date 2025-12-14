@@ -1,0 +1,50 @@
+/* Intro section styles */
+.intro-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+
+    .intro-hdr {
+        margin-bottom: 1rem;
+        font-weight: 700;
+
+        span {
+            color: var(--text-color);
+            font-size: 6.5rem;
+        }
+    }
+
+    .intro-content {
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 3.6rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        span {
+            font-size: 1.8rem;
+            font-weight: 100;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+    }
+
+    .intro-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        
+        span {
+            color: var(--text-color);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+    }
+}

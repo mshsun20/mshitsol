@@ -1,0 +1,39 @@
+/* Slider section styles */
+.slider-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+
+    .slider-part {
+        margin-bottom: 1rem;
+        font-weight: 700;
+
+        span {
+            color: var(--text-color);
+            font-size: 6.5rem;
+        }
+    }
+
+    .slider-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        margin-bottom: 2rem;
+
+        h1 {
+            padding: 1rem;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        span {
+            padding: 1rem;
+            font-size: 1.8rem;
+            font-weight: 100;
+            max-width: 600px;
+        }
+    }
+}

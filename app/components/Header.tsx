@@ -12,14 +12,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React from 'react'
 import { useSelector } from 'react-redux';
-// import { Dancing_Script } from 'next/font/google';
+import { Dancing_Script } from 'next/font/google';
 
-// const dancingScript = Dancing_Script({
-//   weight: ['400', '500', '600', '700'],
-//   subsets: ['latin'],
-//   display: 'swap',
-//   variable: '--font-dancing-script',
-// });
+const dancingScript = Dancing_Script({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dancing-script',
+});
 
 const menuItems = [
   { text: "Home", href: "/", iconOnly: true },
@@ -53,18 +53,19 @@ const Header = () => {
   const router = useRouter(); // Pages router
   const currentPath = router?.asPath || '/';
 
+  // Adjust sessItems if authenticated---------------------
   if (isAuthenticated) {
     sessItems.splice(0, sessItems.length, { text: "Sign Up", href: "/signup/", icon: <UserPlus className='icn' /> })
     sessItems.splice(0, sessItems.length, { text: "Login", href: "/login/", icon: <UserCheck className='icn' /> })
     sessItems.splice(1, sessItems.length, { text: "Logout", href: "/logout/", icon: <UserX className='icn' /> })
   }
 
+  // Theme handler---------------------
   React.useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
-
   // Update theme whenever changed
   const toggleTheme = () => {
     const updated = theme === "light" ? "dark" : "light";
@@ -73,6 +74,8 @@ const Header = () => {
     localStorage.setItem("theme", updated);
   };
 
+
+  // Active Link configuration---------------------
   // Normalizes paths: strips query/hash and trailing slash (but keeps "/" as "/")
   const normalize = (p: string) => {
     if (!p) return '/';
@@ -80,7 +83,6 @@ const Header = () => {
     if (cleaned === '/') return '/';
     return cleaned.endsWith('/') ? cleaned.slice(0, -1) : cleaned;
   };
-
   // returns true when link should be considered active
   const isActive = (href: string) => {
     const cur = normalize(currentPath);
@@ -90,7 +92,6 @@ const Header = () => {
     // active if exact match OR current path is inside the target path (e.g. /projects/live -> /projects)
     return cur === tgt || cur.startsWith(tgt + '/');
   };
-
   // Adjust session items if authentication state changes (avoid mutating original array)
   const sessionLinks = React.useMemo(() => {
     if (isAuthenticated) {
@@ -99,9 +100,12 @@ const Header = () => {
     return sessItems;
   }, [isAuthenticated]);
 
+
   return (
-    <div className={`header`}>
-      <div className='logosec'>MSHIT-Sol</div>
+    <div className={`header ${dancingScript}`}>
+      <div className='logosec'>
+        <Link href="/" className='logo'>MSHIT-Sol</Link>
+      </div>
       <div className="navsec">
         {menuItems.map((elm, index) =>
           elm?.separator ? (
