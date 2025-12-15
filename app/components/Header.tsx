@@ -52,6 +52,7 @@ const Header = () => {
   // console.log(isAuthenticated);
   const router = useRouter(); // Pages router
   const currentPath = router?.asPath || '/';
+  const [scrolled, setScrolled] = React.useState(false)
 
   // Adjust sessItems if authenticated---------------------
   if (isAuthenticated) {
@@ -73,6 +74,17 @@ const Header = () => {
     document.documentElement.setAttribute("data-theme", updated);
     localStorage.setItem("theme", updated);
   };
+
+  // On Scroll style changes
+  React.useEffect(() => {
+    const target = document.querySelector('.main-body')
+    if (!target) return
+
+    const observer = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting), { threshold: 0.1 })
+    observer.observe(target)
+
+    return () => observer.disconnect()
+  }, [])
 
 
   // Active Link configuration---------------------
