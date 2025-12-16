@@ -31,7 +31,7 @@ const menuItems = [
     icon: <House className='icn' />,
     children: [
       { text: "Live", href: "/projects/live/" },
-      { text: "Under Development", href: "/projects/underdev/" },
+      { text: "Under Development", href: "/projects/dev/" },
     ],
   },
   { text: "Blog", href: "/blog/difference-between-tie-beam-and-plinth-beam", icon: <House className='icn' /> },

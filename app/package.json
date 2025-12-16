@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:p": "next dev -p 3031",
-    "dev:q": "next dev -p 3032",
+    "dev:p": "next dev -p 3501",
+    "dev:q": "next dev -p 3502",
     "build": "next build",
-    "start:p": "next start -p 3031",
-    "start:q": "next start -p 3032",
+    "start:p": "next start -p 3501",
+    "start:q": "next start -p 3502",
     "lint": "eslint"
   },
   "dependencies": {

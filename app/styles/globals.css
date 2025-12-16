@@ -27,7 +27,7 @@
 [data-theme="light"] {
   --background: radial-gradient(circle at top, var(--theme-light), var(--light));
   --foreground: var(--text-light);
-  --hdr-bg: white;
+  --hdr-bg: #ffffff;
   --card-bg: var(--card-light);
   --badge-bg: var(--select-light);
   --text-color: var(--text-light);
@@ -37,7 +37,7 @@
 [data-theme="dark"] {
   --background: radial-gradient(circle at top, var(--theme-dark), var(--dark));
   --foreground: var(--text-dark);
-  --hdr-bg: black;
+  --hdr-bg: #000000;
   --card-bg: var(--card-dark);
   --badge-bg: var(--select-dark); 
   --text-color: var(--text-dark);
