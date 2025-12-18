@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
+import { HeaderScrollContext } from '@/context/HeaderScrollContext';
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Dancing_Script } from 'next/font/google';
@@ -52,7 +53,12 @@ const Header = () => {
   // console.log(isAuthenticated);
   const router = useRouter(); // Pages router
   const currentPath = router?.asPath || '/';
-  const [scrolled, setScrolled] = React.useState(false)
+
+  const { scrolled } = React.useContext(HeaderScrollContext);
+
+  // const headerRef = React.useRef<HTMLDivElement>(null);
+  // const observerRef = React.useRef<IntersectionObserver | null>(null);
+  // const [scrolled, setScrolled] = React.useState(false);
 
   // Adjust sessItems if authenticated---------------------
   if (isAuthenticated) {
@@ -76,15 +82,45 @@ const Header = () => {
   };
 
   // On Scroll style changes
-  React.useEffect(() => {
-    const target = document.querySelector('.main-body')
-    if (!target) return
+  // React.useEffect(() => {
+  //   const trigger = document.querySelector(".header-trigger");
+  //   if (!trigger) return;
 
-    const observer = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting), { threshold: 0.1 })
-    observer.observe(target)
+  //   // 🔥 Reset state on navigation
+  //   setScrolled(false);
 
-    return () => observer.disconnect()
-  }, [])
+  //   // 🔥 Kill old observer
+  //   observerRef.current?.disconnect();
+
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       // Scroll is source of truth
+  //       if (window.scrollY <= 5) {
+  //         setScrolled(false);
+  //         return;
+  //       }
+
+  //       setScrolled(!entry.isIntersecting);
+  //     },
+  //     { threshold: 0 }
+  //   );
+
+  //   observerRef.current = observer;
+
+  //   // ✅ CRITICAL: wait for layout + scroll restore
+  //   const raf1 = requestAnimationFrame(() => {
+  //     const raf2 = requestAnimationFrame(() => {
+  //       observer.observe(trigger);
+  //     });
+
+  //     return () => cancelAnimationFrame(raf2);
+  //   });
+
+  //   return () => {
+  //     cancelAnimationFrame(raf1);
+  //     observer.disconnect();
+  //   };
+  // }, [router.asPath]);
 
 
   // Active Link configuration---------------------
@@ -114,7 +150,7 @@ const Header = () => {
 
 
   return (
-    <div className={`header ${dancingScript}`}>
+    <div className={`header ${dancingScript} ${scrolled ? "scrolled" : ""}`}>
       <div className='logosec'>
         <Link href="/" className='logo'>MSHIT-Sol</Link>
       </div>

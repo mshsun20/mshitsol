@@ -1,4 +1,6 @@
+import HeaderTrigger from '@/components/HeaderTrigger'
 import AboutPage from '@/components/AboutDetails/AboutPage'
+import AboutHeadPage from '@/components/HeroSections/AboutHeadPage'
 import Head from 'next/head'
 import React from 'react'
 
@@ -56,7 +58,13 @@ const About = () => {
         </Head>
 
         <main className="main-body">
-            <AboutPage />
+            {/* 🔴 OBSERVER TRIGGER */}
+            <HeaderTrigger />
+
+            <div className="major-body">
+                <AboutHeadPage />
+                <AboutPage />
+            </div>
         </main>
     </>
   )

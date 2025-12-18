@@ -39,22 +39,43 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 5rem;
+  padding: 7.5rem 5rem;
   min-height: 100vh;
   font-size: 1.2rem;
-
-  .major-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5rem;
-    width: auto;
-    max-width: 100rem;
-    padding: 2rem;
-  }
 }
 
+/* observer trigger styles */
+.header-trigger {
+  position: relative;
+  height: 0.5rem;
+  margin-top: -7.5rem; /* SAME AS HEADER HEIGHT */
+}
 
+/* major body styles */
+.major-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+  width: auto;
+  max-width: 100rem;
+  padding: 2rem;
+}
+
+/* Hero section styles */
+.hero-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Homepage styles */
 @import './homepage/introsec.css';
 @import './homepage/slidersec.css';
+
+/* Aboutpage styles */
+@import './aboutpage/aboutheadsec.css';

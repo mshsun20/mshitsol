@@ -1,5 +1,6 @@
 import Head from "next/head";
-import IntroPage from "@/components/IntroSection/IntroPage";
+import HeaderTrigger from "@/components/HeaderTrigger";
+import IntroPage from "@/components/HeroSections/IntroPage";
 import SliderPage from "@/components/SliderSection/SliderPage";
 
 export default function Home() {
@@ -56,6 +57,9 @@ export default function Home() {
       </Head>
 
       <main className="main-body">
+        {/* 🔴 OBSERVER TRIGGER */}
+        <HeaderTrigger />
+
         <div className="major-body">
           <IntroPage />
           <SliderPage />
