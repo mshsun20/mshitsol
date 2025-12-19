@@ -1,6 +1,6 @@
-import HeaderTrigger from '@/components/HeaderTrigger'
-import AboutPage from '@/components/AboutDetails/AboutPage'
-import AboutHeadPage from '@/components/HeroSections/AboutHeadPage'
+import HeaderTrigger from '@/components/layouts/HeaderTrigger'
+import AboutPage from '@/components/About/AboutPage'
+import AboutHeadPage from '@/components/layouts/HeroSections/AboutHeadPage'
 import Head from 'next/head'
 import React from 'react'
 

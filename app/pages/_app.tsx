@@ -2,8 +2,8 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import React from "react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/layouts/Header";
+import Footer from "../components/layouts/Footer";
 
 import { HeaderScrollProvider } from "@/context/HeaderScrollContext";
 import { Provider } from "react-redux";

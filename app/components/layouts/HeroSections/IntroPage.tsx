@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import sliderImages from '../SliderSection/sliderImages'
 
 const IntroPage = () => {
   return (

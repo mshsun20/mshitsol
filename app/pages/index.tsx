@@ -1,7 +1,7 @@
 import Head from "next/head";
-import HeaderTrigger from "@/components/HeaderTrigger";
-import IntroPage from "@/components/HeroSections/IntroPage";
-import SliderPage from "@/components/SliderSection/SliderPage";
+import HeaderTrigger from "@/components/layouts/HeaderTrigger";
+import IntroPage from "@/components/layouts/HeroSections/IntroPage";
+import SliderPage from "@/components/layouts/SliderSection/SliderPage";
 
 export default function Home() {
   return (
