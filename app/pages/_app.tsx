@@ -14,6 +14,14 @@ import { setupInterceptors } from "@/config/axiosInstance";
 import Snackbar from "@/utilities/Snackbar";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
+import {
+  inter,
+  poppins,
+  dancingScript,
+  marckScript,
+  barrio,
+  metamorphous
+} from "@/fonts/customFonts";
 
 
 const pageVariants = {
@@ -57,26 +65,34 @@ const App = ({ Component, pageProps }: AppProps) => {
         <PersistGate persistor={persistor} loading={null}>
           {/* 🔥 ADD THIS */}
           <HeaderScrollProvider>
+            <div
+              className={`
+                ${inter.variable} 
+                ${poppins.variable} 
+                ${dancingScript.variable} 
+                ${marckScript.variable}
+                ${barrio.variable}
+                ${metamorphous.variable}
+              `}
+            >
+              <Header />
 
-            <Header />
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={router.route}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  style={{ minHeight: "100vh" }}
+                >
+                  <Component {...pageProps} />
+                </motion.div>
+              </AnimatePresence>
 
-            {/* Page Transition */}
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.main
-                key={router.route}
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                style={{ minHeight: "100vh" }}
-              >
-                <Component {...pageProps} />
-              </motion.main>
-            </AnimatePresence>
-
-            <Snackbar />
-            <Footer />
-
+              <Snackbar />
+              <Footer />
+            </div>
           </HeaderScrollProvider>
         </PersistGate>
       </Provider>

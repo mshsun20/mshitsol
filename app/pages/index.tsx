@@ -2,6 +2,7 @@ import Head from "next/head";
 import HeaderTrigger from "@/components/layouts/HeaderTrigger";
 import IntroPage from "@/components/layouts/HeroSections/IntroPage";
 import SliderPage from "@/components/layouts/SliderSection/SliderPage";
+import SkillPage from "@/components/layouts/SkillSection/SkillPage";
 
 export default function Home() {
   return (
@@ -63,6 +64,7 @@ export default function Home() {
         <div className="major-body">
           <IntroPage />
           <SliderPage />
+          <SkillPage />
         </div>
       </main>
     </>

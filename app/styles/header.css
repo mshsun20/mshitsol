@@ -120,3 +120,19 @@
   background-color: var(--grey);
   opacity: 0.5;
 }
+
+.lnkicn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.lnktxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}

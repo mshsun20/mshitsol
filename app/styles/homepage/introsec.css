@@ -5,8 +5,10 @@
         font-weight: 700;
 
         span {
-            color: var(--text-color);
+            color: var(--primary-color);
+            font-family: 'Barrio', system-ui;
             font-size: 6.5rem;
+            letter-spacing: 0.2rem;
         }
     }
 
@@ -14,13 +16,18 @@
         margin-bottom: 2rem;
 
         h1 {
-            font-size: 3.6rem;
+            font-family: 'Metamorphous', serif;
+            font-size: 4rem;
             font-weight: 300;
             margin-bottom: 1rem;
         }
         span {
-            font-size: 1.8rem;
+            color: var(--success-color);
+            font-family: 'Marck Script', cursive;
+            font-size: 2rem;
             font-weight: 100;
+            font-style: italic;
+            letter-spacing: 0.2rem;
             margin-bottom: 2rem;
             max-width: 600px;
         }
@@ -32,12 +39,22 @@
         align-items: center;
         gap: 2rem;
         flex-wrap: wrap;
-        margin-top: 2rem;
         
         span {
             color: var(--text-color);
-            font-size: 1.4rem;
-            font-weight: 800;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+        }
+        .highlt {
+            color: var(--error-color);
+            font-family: 'Metamorphous', serif;
+            font-weight: 700;
+        }
+        .dtls {
+            color: var(--primary-color);
+            font-style: italic;
+            font-weight: 400;
         }
     }
 }

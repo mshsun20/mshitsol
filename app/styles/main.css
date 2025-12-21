@@ -76,6 +76,7 @@
 /* Homepage styles */
 @import './homepage/introsec.css';
 @import './homepage/slidersec.css';
+@import './homepage/skillsec.css';
 
 /* Aboutpage styles */
 @import './aboutpage/aboutheadsec.css';

@@ -1,19 +1,19 @@
 import React from 'react'
-import Image from 'next/image'
-import sliderImages from '../SliderSection/sliderImages'
 
 const IntroPage = () => {
   return (
     <div id='introSec' className="hero-sec">
       <div className="hdr">
-        <span>Building bridges between design and code</span>
+        <span>Need Scalable, Secure & Production-ready Website !</span>
       </div>
       <div className="content">
         <h1>Welcome to MSHIT-Sol</h1>
-        <span>Your solution for modern software development.</span>
+        <span>Your solution based on the Modern Software Requirements.</span>
       </div>
       <div className="info">
-        <span>About - Sunny Shiv</span>
+        <span>About:</span>
+        <span className='highlt'>Sunny Shiv</span>
+        <span className='dtls'>(MERN Stack Developer - Lead SDE)</span>
       </div>
     </div>
   )

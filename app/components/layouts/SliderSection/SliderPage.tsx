@@ -11,7 +11,7 @@ import {
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import sliderImages from './sliderImages';
+import sliderImages from '@/data/sliderImages';
 
 const SliderPage = () => {
   return (
@@ -38,8 +38,8 @@ const SliderPage = () => {
             pauseOnMouseEnter: true,
           }}
           loop={true}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log('slide change')}
+          // onSwiper={(swiper) => console.log(swiper)}
         >
           {sliderImages.map((image, index) => (
             <SwiperSlide key={index}>
@@ -57,8 +57,8 @@ const SliderPage = () => {
         </Swiper>
       </div>
       <div className="slider-content">
-        <h1>Discover Our Services</h1>
-        <span>Explore the wide range of solutions we offer to meet your needs.</span>
+        <h1>Discover all Services</h1>
+        <span>Explore the wide range of solutions that meet your requirements.</span>
       </div>
     </div>
   )

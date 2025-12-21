@@ -32,6 +32,11 @@
   --badge-bg: var(--select-light);
   --text-color: var(--text-light);
   --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-light);
+  --primary-color: #7543adfb;
+  --scondary-color: #b39cce;
+  --warning-color: #a38c0a;
+  --success-color: #058805;
+  --error-color: #b82500;
 }
 /* Dark Theme */
 [data-theme="dark"] {
@@ -42,6 +47,11 @@
   --badge-bg: var(--select-dark); 
   --text-color: var(--text-dark);
   --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-dark);
+  --primary-color: #b39cce;
+  --scondary-color: #7543adfb;
+  --warning-color: #ffcc00;
+  --success-color: #33cc33;
+  --error-color: #ff3300;
 }
 
 html {
@@ -61,6 +71,22 @@ body {
   align-items: center;
   width: 1.5rem;
   height: 1.5rem;
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 43.5%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 35%;
+  }
 }
 
 
