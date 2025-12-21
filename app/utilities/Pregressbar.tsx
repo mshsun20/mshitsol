@@ -19,15 +19,15 @@ const Pregressbar = ({ name, level } : Progress ) => {
 
   return (
     <>
-        <li className="space-y-2">
+        <li className="progress-list">
             <div className="flex justify-between text-sm font-medium">
-                <span>{name}</span>
-                <span className="text-foreground/60">{value}</span>
+                <span className='progress-label'>{name}</span>
+                <span className="progress-val">{`${value}/10`}</span>
             </div>
 
-            <div className="h-2 w-full rounded bg-default-200 overflow-hidden">
+            <div className="progress-container h-2 w-full rounded">
                 <div
-                    className="progressbar glow-bar h-full rounded transition-all duration-700 ease-out"
+                    className="progressbar glow-bar h-full rounded transition-all duration-1000 ease-in-out"
                     style={{ width }}
                 />
             </div>

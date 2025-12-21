@@ -13,12 +13,7 @@ const SkillPage = () => {
             <div className="skill-card"></div>
             <div className="skills-list">
                 <ul>
-                    {skillSets.map((skill, index) => (
-                        <li key={index}>
-                            <span className="skill-name">{skill.name}</span>
-                            <div className="skill-level"><Pregressbar name={skill.name} level={skill.level} /></div>
-                        </li>
-                    ))}
+                    {skillSets.map((skill, index) => <Pregressbar key={index} name={skill.name} level={skill.level} />)}
                 </ul>
             </div>
         </div>
