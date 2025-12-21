@@ -2,9 +2,13 @@ import Head from "next/head";
 import HeaderTrigger from "@/components/layouts/HeaderTrigger";
 import IntroPage from "@/components/layouts/HeroSections/IntroPage";
 import SliderPage from "@/components/layouts/SliderSection/SliderPage";
+import skillSets from "@/data/skillSets";
 import SkillPage from "@/components/layouts/SkillSection/SkillPage";
+import React from "react";
 
 export default function Home() {
+  const [skills] = React.useState(skillSets.slice(0, 7));
+
   return (
     <>
       <Head>
@@ -64,7 +68,7 @@ export default function Home() {
         <div className="major-body">
           <IntroPage />
           <SliderPage />
-          <SkillPage />
+          <SkillPage skills={skills} />
         </div>
       </main>
     </>

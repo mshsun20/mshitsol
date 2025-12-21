@@ -1,8 +1,13 @@
 import React from 'react'
-import skillSets from '@/data/skillSets';
+// import skillSets from '@/data/skillSets';
 import Pregressbar from '@/utilities/Pregressbar';
 
-const SkillPage = () => {
+interface Skill {
+    name: string;
+    level: number;
+}
+
+const SkillPage = ({ skills }: { skills: Skill[] }) => {
   return (
     <div className='skill-sec'>
         <div className="hdr">
@@ -13,7 +18,7 @@ const SkillPage = () => {
             <div className="skill-card"></div>
             <div className="skills-list">
                 <ul>
-                    {skillSets.map((skill, index) => <Pregressbar key={index} name={skill.name} level={skill.level} />)}
+                    {skills.map((skill, index) => <Pregressbar key={index} name={skill.name} level={skill.level} />)}
                 </ul>
             </div>
         </div>
