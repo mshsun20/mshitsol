@@ -73,6 +73,58 @@
   padding: 2rem;
 }
 
+
+
+/* Progress bar Glowing Animation style ------------------------------------- */
+/* Base progress gradient */
+.progressbar {
+  background: linear-gradient(
+    90deg,
+    #ec4899,
+    #f59e0b
+  );
+}
+
+/* Glowing effect */
+.glow-bar {
+  position: relative;
+  box-shadow:
+    0 0 6px #ec4899cc,
+    0 0 12px #f59e0b99;
+}
+
+/* Extra glow layer */
+.glow-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(8px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Optional subtle pulse */
+@media (prefers-reduced-motion: no-preference) {
+  .glow-bar {
+    animation: glowPulse 2.5s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    box-shadow:
+      0 0 6px #ec489999,
+      0 0 10px #f59e0b66;
+  }
+  to {
+    box-shadow:
+      0 0 10px #ec4899,
+      0 0 20px #f59e0bcc;
+  }
+}
+
+
 /* Homepage styles */
 @import './homepage/introsec.css';
 @import './homepage/slidersec.css';

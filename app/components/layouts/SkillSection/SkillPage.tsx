@@ -1,5 +1,6 @@
 import React from 'react'
 import skillSets from '@/data/skillSets';
+import Pregressbar from '@/utilities/Pregressbar';
 
 const SkillPage = () => {
   return (
@@ -15,7 +16,7 @@ const SkillPage = () => {
                     {skillSets.map((skill, index) => (
                         <li key={index}>
                             <span className="skill-name">{skill.name}</span>
-                            <div className="skill-level">{skill.level}%</div>
+                            <div className="skill-level"><Pregressbar name={skill.name} level={skill.level} /></div>
                         </li>
                     ))}
                 </ul>
