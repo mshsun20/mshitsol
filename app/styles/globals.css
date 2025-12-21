@@ -34,6 +34,7 @@
   --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-light);
   --primary-color: #7543adfb;
   --scondary-color: #b39cce;
+  --info-color: #007fb9;
   --warning-color: #a38c0a;
   --success-color: #058805;
   --error-color: #b82500;
@@ -49,6 +50,7 @@
   --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-dark);
   --primary-color: #b39cce;
   --scondary-color: #7543adfb;
+  --info-color: #0099ff;
   --warning-color: #ffcc00;
   --success-color: #33cc33;
   --error-color: #ff3300;
