@@ -35,7 +35,7 @@ const menuItems = [
 ];
 
 const sessItems = [
-  { text: "Sign Up", href: "/signup/", icon: <UserPlus className='icn' /> },
+  { text: "Sign Up", href: "/registration/", icon: <UserPlus className='icn' /> },
   { text: "Login", href: "/login/", icon: <UserCheck className='icn' /> },
 ];
 

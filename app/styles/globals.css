@@ -83,6 +83,13 @@ body {
   height: 1.5rem;
 }
 
+
+
+
+
+
+
+/* Media Queries */
 @media (max-width: 1440px) {
   html {
     font-size: 55%;
