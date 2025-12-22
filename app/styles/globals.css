@@ -25,6 +25,8 @@
 
 /* Light Theme */
 [data-theme="light"] {
+  --mode-color: var(--white);
+  --theme: var(--theme-light);
   --background: radial-gradient(circle at top, var(--theme-light), var(--light));
   --foreground: var(--text-light);
   --hdr-bg: #ffffff;
@@ -43,6 +45,8 @@
 }
 /* Dark Theme */
 [data-theme="dark"] {
+  --mode-color: var(--dark);
+  --theme: var(--theme-dark);
   --background: radial-gradient(circle at top, var(--theme-dark), var(--dark));
   --foreground: var(--text-dark);
   --hdr-bg: #000000;

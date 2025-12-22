@@ -1,6 +1,6 @@
 import React from 'react'
-// import skillSets from '@/data/skillSets';
 import Pregressbar from '@/utilities/Pregressbar';
+import Image from 'next/image';
 
 interface Skill {
     name: string;
@@ -15,7 +15,10 @@ const SkillPage = ({ skills }: { skills: Skill[] }) => {
             <span className='desc'>Here are some of my technical skills and expertise.</span>
         </div>
         <div className="content">
-            <div className="skill-card"></div>
+            <div className="skill-card">
+                <div className="skill-wrap"></div>
+                <Image src="/contents/skills/skill.webp" alt="Skills Illustration" className='skill-img' width={500} height={500} />
+            </div>
             <div className="skills-list">
                 <ul>
                     {skills.map((skill, index) => <Pregressbar key={index} name={skill.name} level={skill.level} />)}
