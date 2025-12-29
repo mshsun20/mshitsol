@@ -15,21 +15,22 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 const menuItems = [
-  { text: "Home", href: "/", iconOnly: true },
+  { text: "Home", href: "/", iconOnly: true, heirarchy: 0 },
   { separator: true },
-  { text: "About", href: "/about/", icon: <CircleUserRound className='icn' /> },
+  { text: "About", href: "/about/", icon: <CircleUserRound className='icn' />, heirarchy: 0 },
   {
     text: "Projects",
     href: "/projects/",
     icon: <House className='icn' />,
+    heirarchy: 0,
     children: [
-      { text: "Live", href: "/projects/live/" },
-      { text: "Under Development", href: "/projects/dev/" },
+      { text: "Live", href: "/projects/live/", heirarchy: 0 },
+      { text: "Under Development", href: "/projects/dev/", heirarchy: 0 },
     ],
   },
-  { text: "Blog", href: "/blog/difference-between-tie-beam-and-plinth-beam", icon: <House className='icn' /> },
-  { text: "Contact", href: "/contact-us/", icon: <House className='icn' /> },
-  { text: "FAQ", href: "/faq/", icon: <House className='icn' /> },
+  { text: "Blog", href: "/blog/difference-between-tie-beam-and-plinth-beam", icon: <House className='icn' />, heirarchy: 0 },
+  { text: "Contact", href: "/contact-us/", icon: <House className='icn' />, heirarchy: 0 },
+  { text: "FAQ", href: "/faq/", icon: <House className='icn' />, heirarchy: 0 },
   { separator: true },
   { text: "Change Theme" },
 ];

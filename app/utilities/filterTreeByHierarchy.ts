@@ -1,6 +1,6 @@
 interface TreeNode {
-    heirarchy: number;
     children?: TreeNode[];
+    heirarchy: number;
     [key: string]: string | number | boolean | TreeNode[] | undefined;
 }
 
