@@ -1,0 +1,39 @@
+
+.counter-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    background: var(--mixin1);
+    width: 100%;
+    height: auto;
+    padding: 5rem 0;
+}
+
+.counter-card {
+    background: var(--background);
+    width: 25rem;
+    min-height: 20rem;
+    padding: 3rem;
+    margin: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.1rem 1rem var(--shadow-color);
+    transition: all 0.5s ease;
+
+    &:hover {
+        box-shadow: 0.1rem 0.1rem 2rem var(--shadow-color);
+        transform: scale(1.025);
+    }
+}
+.counter-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-color);
+    width: 5rem;
+    aspect-ratio: 1/1;
+    border-radius: 1rem;
+}
+.counter-value {}
+.counter-hds {}
+.counter-details {}

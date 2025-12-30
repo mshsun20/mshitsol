@@ -2,7 +2,7 @@ import React from 'react'
 
 const IntroPage = () => {
   return (
-    <div id='introSec' className="hero-sec">
+    <div id='introSec' className="hero-sec container">
       <div className="hdr">
         <span>Need Scalable, Secure & Production-ready Website !</span>
       </div>

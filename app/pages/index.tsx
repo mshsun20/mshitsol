@@ -4,6 +4,7 @@ import IntroPage from "@/components/layouts/HeroSections/IntroPage";
 import SliderPage from "@/components/layouts/SliderSection/SliderPage";
 import skillSets from "@/data/skillSets";
 import SkillPage from "@/components/layouts/SkillSection/SkillPage";
+import CounterPage from "@/components/layouts/CounterSection/CounterPage";
 import React from "react";
 
 export default function Home() {
@@ -65,11 +66,11 @@ export default function Home() {
         {/* 🔴 OBSERVER TRIGGER */}
         <HeaderTrigger />
 
-        <div className="major-body">
-          <IntroPage />
-          <SliderPage />
-          <SkillPage skills={skills} />
-        </div>
+        <IntroPage />
+        <SliderPage />
+        <SkillPage skills={skills} />
+        <CounterPage />
+        
       </main>
     </>
   );

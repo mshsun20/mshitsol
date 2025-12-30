@@ -60,10 +60,8 @@ const About = () => {
             {/* 🔴 OBSERVER TRIGGER */}
             <HeaderTrigger />
 
-            <div className="major-body">
-                <AboutHeadPage />
-                <AboutPage />
-            </div>
+            <AboutHeadPage />
+            <AboutPage />
         </main>
     </>
   )

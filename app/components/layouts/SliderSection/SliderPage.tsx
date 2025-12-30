@@ -15,7 +15,7 @@ import sliderImages from '@/data/sliderImages';
 
 const SliderPage = () => {
   return (
-    <div className="slider-sec">
+    <div className="slider-sec container">
       <div className="slider-part">
         <Swiper
           spaceBetween={50}

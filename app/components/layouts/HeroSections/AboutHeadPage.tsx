@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutHeadPage = () => {
   return (
-    <div id='aboutHeadSec' className="hero-sec">
+    <div id='aboutHeadSec' className="hero-sec container">
         <div className="hdr">
             <span>Myself, the skillsets for Magical Creation</span>
         </div>
