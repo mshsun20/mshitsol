@@ -11,18 +11,18 @@
 }
 
 .counter-card {
-    background: var(--background);
-    width: 25rem;
-    min-height: 20rem;
-    padding: 3rem;
+    background: var(--mixin2);
+    width: 30rem;
+    min-height: 25rem;
+    padding: 2.5rem;
     margin: 1.5rem;
     border-radius: 1rem;
-    box-shadow: 0.1rem 0.1rem 1rem var(--shadow-color);
-    transition: all 0.5s ease;
+    box-shadow: 0.01rem 0.01rem 0.2rem var(--shadow-color);
+    transition: all 0.75s ease;
 
     &:hover {
-        box-shadow: 0.1rem 0.1rem 2rem var(--shadow-color);
-        transform: scale(1.025);
+        transform: scale(1.01);
+        box-shadow: 0.05rem 0.05rem 1.2rem var(--shadow-color);
     }
 }
 .counter-icon {
@@ -32,8 +32,41 @@
     background: var(--secondary-color);
     width: 5rem;
     aspect-ratio: 1/1;
+    margin: 0.5rem;
+    color: var(--primary-color);
     border-radius: 1rem;
+    .icn {
+        transform: scale(1.5);
+    }
 }
-.counter-value {}
-.counter-hds {}
-.counter-details {}
+.counter-value {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 5rem;
+    margin: 0.5rem;
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: 600;
+}
+.counter-hds {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 0.5rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.counter-details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 0.5rem;
+    color: var(--text-color-alt);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+}

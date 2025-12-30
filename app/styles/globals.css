@@ -34,16 +34,18 @@
   --card-bg-alt: var(--card-dark);
   --badge-bg: var(--select-light);
   --text-color: var(--text-light);
+  --text-color-alt: #4d3f5cfb;
   --shadow-color: var(--shadow-color-light);
   --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-light);
   --b-shadow-inset: 0.2rem 0.2rem 3.5rem var(--shadow-color-light) inset;
   --primary-color: #7543adfb;
-  --secondary-color: #bda2dbfb;
+  --secondary-color: #dfc9f8fb;
   --info-color: #007fb9;
   --warning-color: #a38c0a;
   --success-color: #058805;
   --error-color: #b82500;
-  --mixin1: radial-gradient(circle at top, var(--theme), var(--white));
+  --mixin1: radial-gradient(circle at top, var(--secondary-color), var(--white));
+  --mixin2: radial-gradient(circle at bottom, var(--theme-light), var(--white));
 }
 /* Dark Theme */
 [data-theme="dark"] {
@@ -56,16 +58,18 @@
   --card-bg-alt: var(--card-light);
   --badge-bg: var(--select-dark); 
   --text-color: var(--text-dark);
+  --text-color-alt: #9a91a5;
   --shadow-color: var(--shadow-color-dark);
   --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-dark);
   --b-shadow-inset: 0.2rem 0.2rem 3.5rem var(--shadow-color-dark) inset;
   --primary-color: #9e5bebfb;
-  --secondary-color: #75628afb;
+  --secondary-color: #402958fb;
   --info-color: #0099ff;
   --warning-color: #ffcc00;
   --success-color: #33cc33;
   --error-color: #ff3300;
-  --mixin1: radial-gradient(circle at top, var(--theme), var(--black));
+  --mixin1: radial-gradient(circle at top, var(--secondary-color), var(--black));
+  --mixin2: radial-gradient(circle at bottom, var(--theme-dark), var(--black));
 }
 
 html {
