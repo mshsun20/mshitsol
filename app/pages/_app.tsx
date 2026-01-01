@@ -23,6 +23,11 @@ import {
   metamorphous
 } from "@/fonts/customFonts";
 
+// ✅ MUI (NO THEME)
+import { CssBaseline } from "@mui/material";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import emotionCache from "@/utilities/createEmotionCache";
+
 
 const pageVariants = {
   initial: {
@@ -47,9 +52,11 @@ const pageVariants = {
   },
 };
 
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
 
-
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: MyAppProps) => {
   const router = useRouter();
 
   React.useEffect(() => {
@@ -61,41 +68,45 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      <Provider store={store}>
-        <PersistGate persistor={persistor} loading={null}>
-          {/* 🔥 ADD THIS */}
-          <HeaderScrollProvider>
-            <div
-              className={`
-                ${inter.variable} 
-                ${poppins.variable} 
-                ${dancingScript.variable} 
-                ${marckScript.variable}
-                ${barrio.variable}
-                ${metamorphous.variable}
-              `}
-            >
-              <Header />
+      <CacheProvider value={emotionCache}>
+        <CssBaseline />
 
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div
-                  key={router.route}
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  style={{ minHeight: "100vh" }}
-                >
-                  <Component {...pageProps} />
-                </motion.div>
-              </AnimatePresence>
+        <Provider store={store}>
+          <PersistGate persistor={persistor} loading={null}>
+            {/* 🔥 ADD THIS */}
+            <HeaderScrollProvider>
+              <div
+                className={`
+                  ${inter.variable} 
+                  ${poppins.variable} 
+                  ${dancingScript.variable} 
+                  ${marckScript.variable}
+                  ${barrio.variable}
+                  ${metamorphous.variable}
+                `}
+              >
+                <Header />
 
-              <Snackbar />
-              <Footer />
-            </div>
-          </HeaderScrollProvider>
-        </PersistGate>
-      </Provider>
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={router.route}
+                    variants={pageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    style={{ minHeight: "100vh" }}
+                  >
+                    <Component {...pageProps} />
+                  </motion.div>
+                </AnimatePresence>
+
+                <Snackbar />
+                <Footer />
+              </div>
+            </HeaderScrollProvider>
+          </PersistGate>
+        </Provider>
+      </CacheProvider>
     </>
   );
 }
