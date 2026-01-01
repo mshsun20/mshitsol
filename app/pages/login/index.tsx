@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginPage from '@/components/Account/LoginPage'
+import LoginPage from '@/components/layouts/Account/LoginPage'
 import Head from 'next/head'
 import HeaderTrigger from '@/components/layouts/HeaderTrigger'
 

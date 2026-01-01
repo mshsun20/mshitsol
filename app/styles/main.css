@@ -79,6 +79,7 @@
 @import './homepage/slidersec.css';
 @import './homepage/skillsec.css';
 @import './homepage/countersec.css';
+@import './homepage/testimonialsec.css';
 
 /* Aboutpage styles */
 @import './aboutpage/aboutheadsec.css';

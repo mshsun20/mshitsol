@@ -5,6 +5,7 @@ import Image from 'next/image';
 interface Skill {
     name: string;
     level: number;
+    yearsOfExp: number;
 }
 
 const SkillPage = ({ skills }: { skills: Skill[] }) => {

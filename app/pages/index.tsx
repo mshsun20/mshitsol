@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import HeaderTrigger from "@/components/layouts/HeaderTrigger";
 import IntroPage from "@/components/layouts/HeroSections/IntroPage";
@@ -5,7 +6,7 @@ import SliderPage from "@/components/layouts/SliderSection/SliderPage";
 import skillSets from "@/data/skillSets";
 import SkillPage from "@/components/layouts/SkillSection/SkillPage";
 import CounterPage from "@/components/layouts/CounterSection/CounterPage";
-import React from "react";
+import TestimonialPage from "@/components/layouts/TestimonialSection/TestimonialPage";
 
 export default function Home() {
   const [skills] = React.useState(skillSets.slice(0, 7));
@@ -70,6 +71,7 @@ export default function Home() {
         <SliderPage />
         <SkillPage skills={skills} />
         <CounterPage />
+        <TestimonialPage />
         
       </main>
     </>

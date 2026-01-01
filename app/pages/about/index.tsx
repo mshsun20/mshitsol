@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import HeaderTrigger from '@/components/layouts/HeaderTrigger'
-import AboutPage from '@/components/About/AboutPage'
+import AboutPage from '@/components/layouts/About/AboutPage'
 import AboutHeadPage from '@/components/layouts/HeroSections/AboutHeadPage'
 
 const About = () => {

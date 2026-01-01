@@ -1,5 +1,5 @@
 import React from 'react'
-import RegistrationPage from '@/components/Account/RegistrationPage'
+import RegistrationPage from '@/components/layouts/Account/RegistrationPage'
 import Head from 'next/head'
 import HeaderTrigger from '@/components/layouts/HeaderTrigger'
 

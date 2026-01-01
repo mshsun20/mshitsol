@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import HeaderTrigger from '@/components/layouts/HeaderTrigger'
-import ProjectPage from '@/components/Projects/ProjectPage'
+import ProjectPage from '@/components/layouts/Projects/ProjectPage'
 
 const index = () => {
   return (
