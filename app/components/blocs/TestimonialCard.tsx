@@ -14,7 +14,7 @@ const Testimonial = ({ item }: { item: testimonial}) => {
         <div className="testimonial-rating">
             <Rating name="precision-rating-read" defaultValue={item.rating} max={item.scale} precision={0.5} readOnly />
         </div>
-        <div className="testimonial-feedback">{item.feedbacks}</div>
+        <div className="testimonial-feedback">{`"${item.feedbacks}"`}</div>
         <div className="testimonial-client">{item.user.fullname}</div>
     </div>
 }

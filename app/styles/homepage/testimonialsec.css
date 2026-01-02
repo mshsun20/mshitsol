@@ -1,5 +1,59 @@
-.testimonial-card {}
-.testimonial-rating {}
+.testimonial-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--mode-color);
+    width: 100%;
+    padding: 5rem 0;
+}
+.testimonial-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.testimonial-hdr {
+    padding: 0.5rem;
+    color: var(--primary-color);
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+.testimonial-desc {
+    padding: 0.5rem;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 100;
+    letter-spacing: 0.2rem;
+}
+.testimonial-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    padding: 4rem;
+}
+
+/* card styles */
+.testimonial-card {
+    width: 55rem;
+    background: radial-gradient(circle at top, var(--mode-color) 2%, var(--badge-bg));
+    padding: 2rem;
+    margin: 0 1rem;
+    border-radius: 1rem;
+    box-shadow: -0.05rem -0.05rem 0.2rem var(--shadow-color);
+}
+.testimonial-rating {
+    padding: 1rem;
+}
 .precision-rating-read {}
-.testimonial-feedback {}
-.testimonial-client {}
+.testimonial-feedback {
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+}
+.testimonial-client {
+    padding: 1rem;
+}
