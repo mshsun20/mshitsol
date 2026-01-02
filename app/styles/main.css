@@ -51,18 +51,6 @@
   margin-top: -7.5rem; /* SAME AS HEADER HEIGHT */
 }
 
-/* major body styles */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 5rem;
-  width: auto;
-  max-width: 100rem;
-  padding: 2rem;
-}
-
 /* Hero section styles */
 .hero-sec {
   display: flex;

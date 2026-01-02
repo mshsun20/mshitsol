@@ -37,9 +37,9 @@
 /* card styles */
 .testimonial-card {
     width: 55rem;
-    background: radial-gradient(circle at top, var(--mode-color) 2%, var(--badge-bg));
+    background: #f3eff883;
     padding: 2rem;
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     border-radius: 1rem;
     box-shadow: -0.05rem -0.05rem 0.2rem var(--shadow-color);
 }
