@@ -33,7 +33,7 @@
     width: 5rem;
     aspect-ratio: 1/1;
     margin: 0.5rem;
-    color: var(--primary-color);
+    color: var(--theme-color);
     border-radius: 1rem;
     .icn {
         transform: scale(1.5);
@@ -45,7 +45,7 @@
     align-items: center;
     width: 5rem;
     margin: 0.5rem;
-    color: var(--primary-color);
+    color: var(--theme-color);
     font-size: 3rem;
     font-weight: 600;
 }

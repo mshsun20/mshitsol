@@ -7,7 +7,7 @@
   --grey: #808080;
   --dark: #0a0a0a;
   --light: #ededed;
-  --theme-color: #7700fffb;
+  --theme-color: #7543adfb;
   --theme-light: #b39cce;
   --theme-dark: #3a2057fb;
   --card-light: #f9f9f9;
@@ -38,7 +38,7 @@
   --shadow-color: var(--shadow-color-light);
   --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-light);
   --b-shadow-inset: 0.2rem 0.2rem 3.5rem var(--shadow-color-light) inset;
-  --primary-color: #7543adfb;
+  --primary-color: #0004fffb;
   --secondary-color: #dfc9f8fb;
   --info-color: #007fb9;
   --warning-color: #a38c0a;
@@ -62,7 +62,7 @@
   --shadow-color: var(--shadow-color-dark);
   --b-shadow: 0.2rem 0.2rem 3.5rem var(--shadow-color-dark);
   --b-shadow-inset: 0.2rem 0.2rem 3.5rem var(--shadow-color-dark) inset;
-  --primary-color: #9e5bebfb;
+  --primary-color: #484bfffb;
   --secondary-color: #402958fb;
   --info-color: #0099ff;
   --warning-color: #ffcc00;

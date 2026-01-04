@@ -48,6 +48,7 @@ const SliderPage = () => {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  sizes='100'
                   priority={index === 0}
                   style={{ objectFit: 'cover' }}
                 />

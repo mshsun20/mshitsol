@@ -16,7 +16,7 @@
 
     .hds {
       padding: 1rem;
-      color: var(--primary-color);
+      color: var(--theme-color);
       font-size: 5rem;
       font-weight: 700;
       letter-spacing: 0.2rem;
@@ -108,7 +108,7 @@
     -0.1rem -0.1rem 0.5rem var(--secondary-color) inset;
 }
 .progress-label {
-  color: var(--primary-color);
+  color: var(--theme-color);
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.05rem;

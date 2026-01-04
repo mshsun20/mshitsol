@@ -13,7 +13,7 @@
         font-weight: 700;
 
         span {
-            color: var(--primary-color);
+            color: var(--theme-color);
             font-family: 'Barrio', system-ui;
             font-size: 6.5rem;
             letter-spacing: 0.2rem;
@@ -60,7 +60,7 @@
             font-weight: 700;
         }
         .dtls {
-            color: var(--primary-color);
+            color: var(--theme-color);
             font-style: italic;
             font-weight: 400;
         }

@@ -7,6 +7,7 @@ import skillSets from "@/data/skillSets";
 import SkillPage from "@/components/layouts/SkillSection/SkillPage";
 import CounterPage from "@/components/layouts/CounterSection/CounterPage";
 import TestimonialPage from "@/components/layouts/TestimonialSection/TestimonialPage";
+import ContactPage from "@/components/layouts/Contact/ContactPage";
 
 export default function Home() {
   const [skills] = React.useState(skillSets.slice(0, 7));
@@ -72,6 +73,7 @@ export default function Home() {
         <SkillPage skills={skills} />
         <CounterPage />
         <TestimonialPage />
+        <ContactPage />
         
       </main>
     </>
