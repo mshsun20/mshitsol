@@ -20,7 +20,7 @@ const ContactPage = () => {
                 <div className="contact-hdr">Ready to Work Together?</div>
                 <div className="contact-desc">{`Whether you have a project in mind or just want to chat about web development, I'd love to hear from you. Let's create something amazing together. Send Me an Email`}</div>
                 <div className="contact-btns">
-                    {/* <Link>Send me an Email</Link> */}
+                    <Link className='btnlnk' href={`/contact/`}>Send me message</Link>
                     <Link className='btnlnk' href={`/projects/`}>View My Work</Link>
                 </div>
                 <div className="contact-tags">

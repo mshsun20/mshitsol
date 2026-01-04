@@ -29,7 +29,7 @@ const menuItems = [
     ],
   },
   { text: "Blog", href: "/blog/difference-between-tie-beam-and-plinth-beam", icon: <House className='icn' />, heirarchy: 0 },
-  { text: "Contact", href: "/contact-us/", icon: <House className='icn' />, heirarchy: 0 },
+  { text: "Contact", href: "/contact/", icon: <House className='icn' />, heirarchy: 0 },
   { text: "FAQ", href: "/faq/", icon: <House className='icn' />, heirarchy: 0 },
   { separator: true },
   { text: "Change Theme" },

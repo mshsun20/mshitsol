@@ -1,9 +1,8 @@
-import React from 'react'
 import Head from 'next/head'
 import HeaderTrigger from '@/components/layouts/HeaderTrigger'
-import ProjectPage from '@/components/layouts/Projects/ProjectPage'
+import React from 'react'
 
-const Projects = () => {
+const Contact = () => {
   return (
     <>
         <Head>
@@ -60,12 +59,10 @@ const Projects = () => {
             {/* 🔴 OBSERVER TRIGGER */}
             <HeaderTrigger />
 
-            <div className="major-body">
-                <ProjectPage />
-            </div>
+            <div className="major-body">Contact Us</div>
         </main>
     </>
   )
 }
 
-export default Projects
+export default Contact
